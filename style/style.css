@@ -1,0 +1,109 @@
+body{
+/*background: rgba(41,184,229,1);
+background: -moz-linear-gradient(top, rgba(41,184,229,1) 0%, rgba(179,220,237,1) 60%, rgba(179,220,237,1) 100%);
+//background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(41,184,229,1)), color-stop(60%, rgba(179,220,237,1)), color-stop(100%, rgba(179,220,237,1)));
+//background: -webkit-linear-gradient(top, rgba(41,184,229,1) 0%, rgba(179,220,237,1) 60%, rgba(179,220,237,1) 100%);
+//background: -o-linear-gradient(top, rgba(41,184,229,1) 0%, rgba(179,220,237,1) 60%, rgba(179,220,237,1) 100%);
+//background: -ms-linear-gradient(top, rgba(41,184,229,1) 0%, rgba(179,220,237,1) 60%, rgba(179,220,237,1) 100%);
+//background: linear-gradient(to bottom, rgba(41,184,229,1) 0%, rgba(179,220,237,1) 60%, rgba(179,220,237,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#29b8e5', endColorstr='#b3dced', GradientType=0 );
+*/
+}
+.clearfix{
+
+}
+.clearfix::after, .clearfix::before {
+    content: "";
+    display: table;
+    box-sizing: border-box;
+}
+.clearfix::after{
+clear: both;
+}
+.cool{
+	background: -moz-linear-gradient(top, rgba(41,184,229,1) 0%, rgba(179,220,237,1) 60%, rgba(179,220,237,1) 100%);
+border: 1px solid black;
+}
+.Liner{
+	border: 1px solid black;
+}
+.heart {
+	z-index: 1;
+right: 20px;
+top: 20px;
+font-size: 24px;
+outline: 0;
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	-webkit-transform: rotate(45deg);  /* для Chrome и Safari */
+	-moz-transform: rotate(45deg); /* для Firefox */ 
+	-o-transform: rotate(45deg); /* для Opera */ 
+	transform: rotate(45deg);
+	border: solid 1px red;
+	border-top: none;
+	border-left: none;
+	background: -moz-radial-gradient(170% 50%, circle , #8B0000 0%, #8B0000 52%,  red 76%);
+
+animation-name: anime;
+		/* имя кейфрейма для анимации */
+	animation-duration: 300ms;
+		/* длительность анимации */
+	animation-iteration-count: infinite;
+		/* количество повторений, в данном случае - бесконечно */
+	animation-direction: alternate;
+		/* проигрывать анимацию в прямом и в обратном порядке */
+	animation-timing-function: ease-in;
+}
+
+@keyframes anime {
+	from {
+		transform: scale(1) rotate(45deg);
+	}
+	to {
+		transform: scale(1.03) rotate(45deg);
+	}
+}
+
+
+
+.heart:before, .heart:after {
+	position:absolute;
+	content: ' ';
+	-webkit-border-radius: 50px 0 0 50px;
+	-moz-border-radius: 50px 0 0 50px;
+	border-radius: 25px 0 0 25px;
+	width: 35px;
+	height: 50px;
+	border: solid 1px red;
+	border-right: none;
+	left:-31px;
+	background: -moz-radial-gradient(15% 50%, circle, #FFE4E1, red 85%);
+}
+.heart:after {
+	position: absolute;
+	left: 7px;
+	top: -41px;
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	background: -moz-radial-gradient(50% 80%, circle, #FFB6C1, red, #8B0000 90%);
+}
+
+.menu{
+	line-height: 45px; 
+	font-size:20px;
+	float: left;
+	background: #fff;
+	height: 43px;
+	text-align: right;
+	top:50%;
+	vertical-align: middle;
+	padding-left: 10px;
+	padding-right: 10px;
+	opacity: 0.4;
+}
+.menu:hover{
+	opacity: 0.5;
+	cursor: pointer;
+}

@@ -1,17 +1,41 @@
 <?php
-header ("Content-Type: text/html; charset=utf-8");
-echo "<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\">
-<title>Open Server</title>
-</head>
-<body style=\"background: url(fon.png) top left repeat-x\">
-<center>
-<br><br><br><div style=\"width: 600px;\"><span style=\"font-size: 32px; color: green; font-family: Arial, Verdana; text-shadow: 0 1px 0 #fff\">Добро пожаловать в Open Server!</span>
-<br><br><br><span style=\"font-size: 32px; color: #333; font-family: Verdana, Arial;\">Он работает ;-)</span>
-<br><img src=\"st.png\" style=\"margin: 40px 0\"><br><a href=\"http://open-server.ru/docs/\" style=\"font-size: 24px; color: #048acd; font-family: Arial;\">Руководство пользователя</a></span><br><br><br></div>
-</center>
-</body>
-</html>";
+include_once 'setting.php';
+
+session_start();
+$CONNECT = mysqli_connect(HOST,USER,PASS,DB);
+if ($CONNECT) echo 'connection bd OK';
+else echo 'error connection';
+
+echo $page;
+if ($_SERVER['REQUEST_URI'] == '/')    $page = 'index';
+else {
+    $page = substr($_SERVER['REQUEST_URI'], 1);
+
+    if (!preg_match('/^[A-z0-9]{3,15}$/', $page))
+        exit('error url');
+}
+
+
+
+
+if (file_exists($page . '.php'))
+    include 'index.html';
+else if ($_SESSION['ulogin'] != 1 and file_exists('guest/' . $page . '.php'))
+    include 'guest/' . $page . '.php';
+else if ($_SESSION['ulogin'] == 1 and file_exists('auth/' . $page . '.php'))
+    include 'auth/' . $page . '.php';
+else if (file_exists('all/' . $page . '.php'))
+    include 'auth/' . $page . '.php';
+else
+    exit('Страница недоступна ошибка 404');
+echo "<br>1234  Тест тест</br>";
+echo $page;
 ?>
+
+<?php
+echo 'hi teste';
+?>
+test
+</>
+</body>
+</html>
