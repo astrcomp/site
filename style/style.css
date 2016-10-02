@@ -1,13 +1,5 @@
 body{
-/*background: rgba(41,184,229,1);
-background: -moz-linear-gradient(top, rgba(41,184,229,1) 0%, rgba(179,220,237,1) 60%, rgba(179,220,237,1) 100%);
-//background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(41,184,229,1)), color-stop(60%, rgba(179,220,237,1)), color-stop(100%, rgba(179,220,237,1)));
-//background: -webkit-linear-gradient(top, rgba(41,184,229,1) 0%, rgba(179,220,237,1) 60%, rgba(179,220,237,1) 100%);
-//background: -o-linear-gradient(top, rgba(41,184,229,1) 0%, rgba(179,220,237,1) 60%, rgba(179,220,237,1) 100%);
-//background: -ms-linear-gradient(top, rgba(41,184,229,1) 0%, rgba(179,220,237,1) 60%, rgba(179,220,237,1) 100%);
-//background: linear-gradient(to bottom, rgba(41,184,229,1) 0%, rgba(179,220,237,1) 60%, rgba(179,220,237,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#29b8e5', endColorstr='#b3dced', GradientType=0 );
-*/
+
 }
 .clearfix{
 
@@ -22,7 +14,10 @@ clear: both;
 }
 .cool{
 	background: -moz-linear-gradient(top, rgba(41,184,229,1) 0%, rgba(179,220,237,1) 60%, rgba(179,220,237,1) 100%);
-border: 1px solid black;
+border: 0;
+padding: 0;
+    margin: 0;
+
 }
 .Liner{
 	border: 1px solid black;
@@ -95,7 +90,7 @@ animation-name: anime;
 	font-size:20px;
 	float: left;
 	background: #fff;
-	height: 43px;
+	height: 40px;
 	text-align: right;
 	top:50%;
 	vertical-align: middle;
@@ -106,4 +101,42 @@ animation-name: anime;
 .menu:hover{
 	opacity: 0.5;
 	cursor: pointer;
+}
+menu{
+	overflow: hidden;
+	float:right;
+	border: 0;
+padding: 0;
+    margin: 0;
+}
+menu li{
+	float:left;
+	list-style-type: none;
+	border: 0;
+padding: 0;
+    margin: 0;
+}
+.fon {
+	background-color: grey;
+	position: fixed;
+	width:100%;
+	height: 100vh;
+	z-index: 5;
+	left:0;
+	top:0;
+	opacity: 0.5;
+	
+}
+.form {
+		background-color: white;
+	position: fixed;
+	width:250px;
+	height: 250px;
+	z-index: 7;
+	left:50%;
+	top:100px;
+	border-radius: 4px;
+	margin-left: 125px;
+	margin: 6em auto 0 -125px;
+
 }

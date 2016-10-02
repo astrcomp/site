@@ -3,8 +3,8 @@ include_once 'setting.php';
 
 session_start();
 $CONNECT = mysqli_connect(HOST,USER,PASS,DB);
-if ($CONNECT) echo 'connection bd OK';
-else echo 'error connection';
+if ($CONNECT) echo '<div style="position:absolute;">connection bd OK</div>';
+else echo '<div style="position:absolute;">error connection</div>';
 
 echo $page;
 if ($_SERVER['REQUEST_URI'] == '/')    $page = 'index';
