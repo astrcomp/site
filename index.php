@@ -25,11 +25,44 @@ else if ($_SESSION['ulogin'] != 1 and file_exists('guest/' . $page . '.php'))
 else if ($_SESSION['ulogin'] == 1 and file_exists('auth/' . $page . '.php'))
     include 'auth/' . $page . '.php';
 else if (file_exists('all/' . $page . '.php'))
-    include 'auth/' . $page . '.php';
+    include 'all/' . $page . '.php';
+  else if (file_exists('form/' . $page . '.php'))
+    include 'form/' . $page . '.php';
+    else if (file_exists('source/' . $page . '.php'))
+    include 'source/' . $page . '.php';
 else
     exit('Страница недоступна ошибка 404');
 echo "<br>1234  Тест тест</br>";
 echo $page;
+
+function Head($fl1){
+	echo '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Сайт недвижимости!</title><link rel="stylesheet" type="text/css" href="style/style.css" media="all"><script type="text/javascript">function hideandseek(){ if(document.getElementById("fon").style.display == "none")  	{document.getElementById("fon").style.display = "";}  else document.getElementById("fon").style.display = "none";    if(document.getElementById("form").style.display == "none")  	{document.getElementById("form").style.display = "";}  else document.getElementById("form").style.display = "none";}	</script></head>' ;
+}
+
+
+function Menu ($Logon){
+	echo '<div style="border: 0;padding: 0;margin: 0;">
+			<div id="mainMenu" class="cool" style="width:100%; min-height: 40px; margin: 0;">
+				<div style="float:right;" class="cool">
+					<menu class="cool">
+						<li style="border: 0;padding: 0;margin: 0;">
+							<a href="/registr" style="border: 0;padding: 0;	margin: 0;">
+							<div style=""> 
+								<div class="menu" onclick="hideandseek();">Регистрация
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+
+						<div class="menu"  onclick="hideandseek();">'.$Logon.'</div>
+
+				</li>
+			</menu>
+		</div>
+	</div>
+</div>';
+}
 ?>
 
 <?php

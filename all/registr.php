@@ -17,18 +17,28 @@
                                 </div>
                 </div>
 		<div id="search"></div>
+		<?php
+			if ($_POST['enter']){
+				echo '<br>Запрос...
+				</section>
+	<footer id="bottom" class="cool" style="display: block; padding: 0 !important;">11 </footer>
+</body>
+</html>';
+				exit;
+			}
+
+		?>
                 <div id="mainContent">
                     Форма регистрации нового пользователя!
                     
-                    <form method="POST" action="/all/registr.php">
-                        Логин<input type="text" name="login"><br>
-                        E-mail<input type="email" name="email"><br>
-                        Пароль<input type="password" name="pass"><br>
-                        Имя<input type="text" name="name"><br>
-                        
-                        
-                        
-                    </form>
+											<form action="/registr" method="POST">
+												<br><input type="text" required> - Логин:
+												<br><input type="email" required> - E-Mail:
+												<br><input type="password" required> - Пароль:
+												<br><input type="text" required> - Имя:
+												<br><br><input type="submit" name="enter" value="Регистрация" required>
+												<input type="reset" value="Очистить" required>
+											</form>
                 </div>
 	</section>
 	<footer id="bottom" class="cool" style="display: block; padding: 0 !important;">11 </footer>
