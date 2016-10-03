@@ -1,4 +1,4 @@
 RewriteEngine on
-RewriteBase /
-RewriteRule .* index.php
-Options -Indexes
+#RewriteBase /
+RewriteRule .* index.php [L]
+#Options -Indexes
