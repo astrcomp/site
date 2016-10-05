@@ -71,6 +71,25 @@ animation-name: anime;
 	}
 }
 
+@keyframes loading{
+0%{border-color:#4B5676 #6E7CA3 #6474A1 #4E5E8A}
+35%{border-color:#4E5E8A #4B5676 #6E7CA3 #6474A1;border-radius:50%}
+50%{border-color:#6474A1 #4E5E8A #4B5676 #6E7CA3;border-radius:50%}
+55%{border-color:#6E7CA3 #6474A1 #4E5E8A #4B5676 ;border-radius:50%}
+100%{border-color:#4B5676 #6E7CA3 #6474A1 #4E5E8A;transform:rotate(360deg)}
+}
+
+.iconSpinner{width:0;
+	height:0;
+	margin:-1.6px 0 -8px;
+	border:0 solid #6E7CA3;
+	border-width:8px;
+	animation:loading .85s linear infinite;
+	opacity:.7;
+display:inline-block;
+margin-bottom: -2px;
+}
+
 
 
 .heart:before, .heart:after {
@@ -141,8 +160,8 @@ padding: 0;
 .form {
 		background-color: white;
 	position: fixed;
-	width:250px;
-	height: 250px;
+	width:200px;
+	height: 200px;
 	z-index: 7;
 	left:50%;
 	top:100px;
@@ -205,7 +224,7 @@ i::before {
 
 .search {
 width: 44px; 
-margin-top: -4px; 
+margin-top: -11px; 
 border-bottom-left-radius: 0;
 border-top-left-radius: 0;
 -webkit-box-sizing: border-box;
@@ -216,7 +235,9 @@ border-radius: 4px;
 border: 1px solid #cdd1d4;
 line-height: 1.2;
 transition: border .2s;
-padding: .58rem .8rem .48rem !important;
+/*padding: .58rem .8rem .48rem !important;
+*/
+padding: 0;
 height: 37px;
 font-size: 15px;
 background: #fff;
@@ -227,6 +248,12 @@ vertical-align: middle;
 cursor: pointer;
 text-decoration: none;
 margin-left: 0;
+-moz-border-radius-topleft: 0;
+-webkit-border-top-left-radius: 0;
+border-top-left-radius: 0;
+-moz-border-radius-bottomleft: 0;
+-webkit-border-bottom-left-radius: 0;
+border-bottom-left-radius: 0;
 }
 
 
@@ -245,7 +272,7 @@ src: url('../font/fontello.eot?46654749');
 input:focus{
 	border: 1px solid #6E7CA3;
 }
-input{
+/*input{
 box-sizing: border-box;
 width: 100%;
 	font-weight: 400;
@@ -254,12 +281,19 @@ border-radius: 4px;
 line-height: 1.2;
 transition: border .2s;
 }
-button {
+/*button {
 	padding:0; border:0}
 button::-moz-focus-inner {padding:0; border:0}
 button:focus {outline: 1px dotted}
+*/
 .btn{
 	-moz-transition:all .15s ease-in-out;
 	display: inline-block;
 }
 #locationField .addOn{width:44px;margin-top:-4px;border-bottom-left-radius:0;border-top-left-radius:0}
+
+.MessageBlock{
+	border: 1px solid #F132 ;background: #D44B38;
+	padding:10px;
+	
+}

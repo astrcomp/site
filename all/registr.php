@@ -28,19 +28,19 @@
 			}
 
 		?>
-                <div id="mainContent">
+                <div id="mainContent" style="margin-left: 10px;">
                     Форма регистрации нового пользователя!
                     
-											<form action="/registr" method="POST">
-												<br><input type="text" required> - Логин:
-												<br><input type="email" required> - E-Mail:
-												<br><input type="password" required> - Пароль:
-												<br><input type="text" required> - Имя:
+											<form action="/account" method="POST" style="margin-left: 10px;">
+												<br><input type="text" name="login" style="margin: 2px;" required> - Логин:
+												<br><input type="email" name="email" style="margin: 2px;" > - E-Mail:
+												<br><input type="password" name="password" style="margin: 2px;" required> - Пароль:
+												<br><input type="text" name="name" style="margin: 2px;"  > - Имя:
 												<br><br><input type="submit" name="enter" value="Регистрация" required>
 												<input type="reset" value="Очистить" required>
 											</form>
                 </div>
 	</section>
-	<footer id="bottom" class="cool" style="display: block; padding: 0 !important;">11 </footer>
+	<footer id="bottom" class="cool" style="display: block; padding: 0 !important;"> Подвал сайта </footer>
 </body>
 </html>

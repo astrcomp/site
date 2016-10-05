@@ -39,6 +39,32 @@ else
     exit('Страница недоступна ошибка 404');
 //echo "<br>1234  Тест тест</br>";
 
+function MessageSend($p1,$p2)
+{
+	if($p1==1) $p1='Ошибка';
+	else if ($p1==2) $p1='Ошибка';
+	else if ($p1==3) $p1='Ошибка';
+
+	$_SESSION['message']='<div class="MessageBlock"><b>'.$p1.$p2.'</div>';
+	exit (header('Location'.$_SERVER['HTTP_REFERER']));
+}
+
+function MessageShow(){
+
+if ($_SESSION['message'])$Message=$_SESSION['message'];
+echo $Message;
+$_SESSION['message']=array();
+}
+
+
+function FormChars ($p1) {
+return nl2br(htmlspecialchars(trim($p1), ENT_QUOTES), false);
+}
+
+
+function GenPass ($p1, $p2) {
+return md5('MRSHIFT'.md5('321'.$p1.'123').md5('678'.$p2.'890'));
+}
 
 function Title($title){
 	echo '<!DOCTYPE html>
@@ -72,22 +98,13 @@ function Bottom(){
 
 }
 
-
-
-
-
-
-
 function Head($fl1){
 	echo '<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><title>Сайт недвижимости!</title><link rel="stylesheet" type="text/css" href="style/style.css" media="all">
-	<link rel="stylesheet" type="text/css" href="../style/fontell.css" media="all">
+	<link rel="stylesheet" type="text/css" href="/style/fontell.css" media="all">
 	<script type="text/javascript">function hideandseek(){ if(document.getElementById("fon").style.display == "none")  	{document.getElementById("fon").style.display = "";}  else document.getElementById("fon").style.display = "none";    if(document.getElementById("form").style.display == "none")  	{document.getElementById("form").style.display = "";}  else document.getElementById("form").style.display = "none";}	</script></head>' ;
 }
 
-function formChar($p1){
-	return nl2br(htmlspecialchars(trim($p1),ENT_QUOTES),false);
 
-}
 
 function Menu ($Logon){
 	echo '<div style="border: 0;padding: 0;margin: 0;">
@@ -101,7 +118,7 @@ function Menu ($Logon){
 						<li style="border: 0;padding: 0;margin: 0;">
 							<a href="/registr" style="border: 0;padding: 0;	margin: 0;">
 							<div style=""> 
-								<div class="menu" onclick="hideandseek();">Регистрация
+								<div class="menu" onclick="">Регистрация
 								</div>
 							</div>
 						</a>
