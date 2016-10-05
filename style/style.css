@@ -1,7 +1,13 @@
-* {
+/* {
 	margin: 0;
 	padding: 0;
 }
+
+/*::after, *::before {
+	moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+*/
 body{
 
 }
@@ -17,9 +23,10 @@ body{
 clear: both;
 }
 .cool{
-	background: -moz-linear-gradient(top, rgba(41,184,229,1) 0%, rgba(179,220,237,1) 60%, rgba(179,220,237,1) 100%);
-border: 0;
-padding: 0;
+//	background: -moz-linear-gradient(top, rgba(41,184,229,1) 0%, rgba(179,220,237,1) 60%, rgba(179,220,237,1) 100%);
+	background: #6E7CA3;
+	border: 0;
+	padding: 0;
     margin: 0;
 
 }
@@ -94,7 +101,6 @@ animation-name: anime;
 	line-height: 45px; 
 	font-size:20px;
 	float: left;
-	
 	height: 40px;
 	text-align: right;
 	top:50%;
@@ -145,3 +151,115 @@ padding: 0;
 	margin: 6em auto 0 -125px;
 
 }
+
+.row {
+	margin-left: -6px;
+margin-right: -6px;
+box-sizing: border-box;
+}
+
+.field::before,.row:after,.row:before{
+	content:" ";
+	display:table;
+	box-sizing: border-box;
+}
+.field::after,.row::after{
+    clear: both;
+    -moz-box-sizing: border-box;
+	box-sizing: border-box;
+	content: " ";
+display: table;
+}
+
+.field{
+	margin-top: 5px;
+margin-bottom: 5px;
+}
+
+.iconSearch {
+	color:inherit;
+}
+
+i::before {
+    margin-right: 0 !important;
+}
+.iconSearch::before {
+    content: '\e802';
+}
+
+.iconSearch::before{
+	font-family: 'fontello';
+	font-style: normal;
+	font-weight: 400;
+	speak: none;
+	display: inline-block;
+	text-decoration: inherit;
+	width: 1.1em;
+	position: relative;
+	vertical-align: baseline;
+	text-align: center;
+	font-variant: normal;
+	text-transform: none;
+	box-sizing: border-box;
+}
+
+.search {
+width: 44px; 
+margin-top: -4px; 
+border-bottom-left-radius: 0;
+border-top-left-radius: 0;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+font-weight: 400;
+border-radius: 4px;
+border: 1px solid #cdd1d4;
+line-height: 1.2;
+transition: border .2s;
+padding: .58rem .8rem .48rem !important;
+height: 37px;
+font-size: 15px;
+background: #fff;
+color: #5c6872;
+display: inline-block;
+outline: 0;
+vertical-align: middle;
+cursor: pointer;
+text-decoration: none;
+margin-left: 0;
+}
+
+
+@font-face{
+font-family:'fontello';
+src: url('../font/fontello.eot?46654749');
+  src: url('../font/fontello.eot?46654749#iefix') format('embedded-opentype'),
+       url('../font/fontello.woff2?46654749') format('woff2'),
+       url('../font/fontello.woff?46654749') format('woff'),
+       url('../font/fontello.ttf?46654749') format('truetype'),
+       url('../font/fontello.svg?46654749#fontello') format('svg');
+       font-weight:400;
+       font-style:normal;
+   }
+
+input:focus{
+	border: 1px solid #6E7CA3;
+}
+input{
+box-sizing: border-box;
+width: 100%;
+	font-weight: 400;
+padding: .6em .8em .5em;
+border-radius: 4px;
+line-height: 1.2;
+transition: border .2s;
+}
+button {
+	padding:0; border:0}
+button::-moz-focus-inner {padding:0; border:0}
+button:focus {outline: 1px dotted}
+.btn{
+	-moz-transition:all .15s ease-in-out;
+	display: inline-block;
+}
+#locationField .addOn{width:44px;margin-top:-4px;border-bottom-left-radius:0;border-top-left-radius:0}

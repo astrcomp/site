@@ -14,7 +14,37 @@ $Logon='Вход';
 	Menu($Logon);
 	?>
 		
-<div id="search">search</div>
+<div id="search" style="padding-bottom: 0 !important; padding:5px;box-sizing: border-box;">
+	<div style="margin-right: auto;
+	margin-left: auto;
+	padding-left: 6px;
+	padding-right: 6px;">
+	<div class="row" >
+		<div id="serch" style="width: 29.16666667%;float: left;position: relative;min-height: 1px;padding-left: 6px;padding-right: 6px;box-sizing: border-box;">
+		<div class="former" style="margin-top: 5px;margin-bottom: 5px;box-sizing: border-box;">
+		<div class="field">
+		<span style="display: table-cell;width: 10000px;"> 
+			<div id="locationField">	
+			<span>					
+				<div style="width: calc(100% - 44px);display: inline-block;position: relative;">
+					<input id="location" is="null" autocomplete="off" role="combobox" aria-autocomplete="list" aria-owns="react-autowhatever-1" aria-expanded="false" type="text" placeholder="Поиск" style="border-right: none;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;width: 100%;font-family: PostGrotesk,sans-serif;font-weight: 400;padding: .6em .8em .5em;border-radius: 4px;
+border: 1px solid #cdd1d4;line-height: 1.2;transition: border .2s;color: #3b4144;height: 37px;">
+				</div>
+				<button  class="search" style="">
+					<i class="iconSearch"></i>
+				</button>			
+			</span>
+		</div>
+		</span>
+		</div>
+			</div>
+		</div>
+			<div id="serch" style="width: 70%;float: left;position: relative;min-height: 1px;padding-left: 6px;padding-right: 6px;">
+			кнопки
+		</div>
+		</div>
+		</div>
+</div>
 <div id="mainContent" class="Liner" style="display: flex;margin-right: 0px;flex:1;overflow: auto;">			
 	<div id="imageSpisok" class="Liner" style="float:left;display: flex;flex:1;flex-direction: column;flex: 1;">
 		<div style="overflow: auto;" >
@@ -23,12 +53,11 @@ $Logon='Вход';
 					<div id="conteiner" style="padding-left: 6px;padding-top: 10px;">
 						<div id="element1" class="Liner" style="float: left;position: relative;border-radius: 4px;background-color: #fff;min-height: 313px;width: 33.33333333%;min-height: 1px;padding-left: 6px;padding-top: 10px;box-sizing: border-box;">
 							<div id="krug" style="border-radius: 4px;background-color: #fff;">
-								<button id="favorite" class="heart">							
-								</button>
+								<button id="favorite" class="heart"></button>
 								<a href="">
 									<div style="width: 100%;float: left;line-height: 1.2em;position: relative;overflow: visible;display: block;">
-										<div style="height: 180px;">1</div>
-										<div    style="min-height: 65px;">1</div>
+										<div style="height: 180px;">фото</div>
+										<div    style="min-height: 65px;">инфа</div>
 									</div>
 								</a>
 								<div id="user"></div>
@@ -39,8 +68,8 @@ $Logon='Вход';
 								<div id="favorite" ></div>
 								<a href="">
 									<div style="width: 100%;float: left;line-height: 1.2em;position: relative;overflow: visible;display: block;">
-										<div style="height: 180px;">1</div>
-										<div    style="min-height: 65px;">1</div>
+										<div style="height: 180px;">фото</div>
+										<div    style="min-height: 65px;">инфа</div>
 									</div>
 								</a>
 								<div id="footer2"></div>
@@ -52,8 +81,8 @@ $Logon='Вход';
 								</button>
 								<a href="">
 									<div style="width: 100%;float: left;line-height: 1.2em;position: relative;overflow: visible;display: block;">
-										<div style="height: 180px;">1</div>
-										<div    style="min-height: 65px;">1</div>
+										<div style="height: 180px;">фото</div>
+										<div    style="min-height: 65px;">инфа</div>
 									</div>
 								</a>
 								<div id="user"></div>
@@ -63,7 +92,7 @@ $Logon='Вход';
 					</div>
 				</div>
 				<div id="pageCount" class="Liner" style="background-color: #fff;box-sizing: border-box;" >
-					<div id="downSlep" style="background: white; box-sizing: border-box;margin-top: 20px !important;margin-bottom: 10px !important;">123					
+					<div id="downSlep" style="background: white; box-sizing: border-box;margin-top: 20px !important;margin-bottom: 10px !important;">Страницы 1					
 					</div>
 					<div style="padding-left: 10px !important;">City
 					</div>
@@ -73,10 +102,10 @@ $Logon='Вход';
 		</div>	
 
 	</div>
-	<div id="map" style=" border: 1px solid black;height: 10px; float:left;display:flex;flex: 1;	flex-direction: column;box-sizing: border-box;">	1	</div>
+	<div id="map" style=" border: 1px solid black;height: 10px; float:left;display:flex;flex: 1;	flex-direction: column;box-sizing: border-box;">	Карта	</div>
 </div>
 </section>
-<footer id="bottom" class="cool" style="display: block; padding: 0 !important;">11 </footer>
+<footer id="bottom" class="cool" style="display: block; padding: 0 !important;"> Информация </footer>
 <?php
 if ($_POST['enter']){
 echo '<br>Запрос на логин...';
@@ -103,7 +132,7 @@ exit;
 	<br>
 	<br>
 	<br>
-	<form action="/account" method="POST" style="padding: 10px;">
+	<form action="account" method="POST" style="padding: 10px;">
 		<input type="text" required> - Логин:
 		<input type="password" required style="margin-top: 10px;"> - Пароль:
 		<br><br><input type="submit" name="enter" value="Вход" required>
