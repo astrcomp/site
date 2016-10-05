@@ -5,8 +5,9 @@ if ($_POST['enter']){
 	$_POST['email'] = FormChars($_POST['email']);
 	$_POST['password'] = GenPass(FormChars($_POST['password']), $_POST['login']);
 	$_POST['name'] = FormChars($_POST['name']);
+	$_POST['captcha'] = FormChars($_POST['captcha']);
 
-
+if ($_SESSION['captcha'] != md5($_POST['captcha'])) MessageSend(1, 'не верный капча.');
 
 	if (!$_POST['login'] or !$_POST['email'] or !$_POST['password'] or !$_POST['name']) MessageSend(1,'Ошибка валидации формы.');
 

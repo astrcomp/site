@@ -6,7 +6,7 @@ $CONNECT = mysqli_connect(HOST,USER,PASS,DB);
 if ($CONNECT) ;//echo '<div style="position:absolute;">connection bd OK</div>';
 else echo '<div style="position:absolute;">error connection</div>';
 
-echo $page;
+//echo $page;
 if ($_SERVER['REQUEST_URI'] == '/')    $page = 'index';
 else if ($_SERVER['REQUEST_URI'] == '/admin/')  $page = $page.'index.php';
 else {

@@ -35,7 +35,8 @@
 												<br><input type="text" name="login" style="margin: 2px;" required> - Логин:
 												<br><input type="email" name="email" style="margin: 2px;" > - E-Mail:
 												<br><input type="password" name="password" style="margin: 2px;" required> - Пароль:
-												<br><input type="text" name="name" style="margin: 2px;"  > - Имя:
+												<br><input type="text" name="name" style="margin: 2px;"  > - Имя: 
+												<br><input type="text" name="captcha" style="margin: 2px;" placeholder="Captcha"><img src="/style/captcha.php" alt="Каптча">
 												<br><br><input type="submit" name="enter" value="Регистрация" required>
 												<input type="reset" value="Очистить" required>
 											</form>
