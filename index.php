@@ -12,6 +12,7 @@ else if ($_SERVER['REQUEST_URI'] == '/admin/')  $page = $page.'index.php';
 else {
     $page = substr($_SERVER['REQUEST_URI'], 1);
    if (!preg_match('/^[A-z0-9]{3,15}$/', $page))
+   	
        exit('error url');
 }
 

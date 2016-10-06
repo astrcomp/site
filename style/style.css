@@ -297,3 +297,65 @@ button:focus {outline: 1px dotted}
 	padding:10px;
 	
 }
+.cardPhoto{
+
+	border-radius: 4px 4px 0 0;
+	width: 100%;
+background-size: cover !important;
+background-position: center center;
+background-repeat: no-repeat;
+border-bottom-width: 1px !important;
+}
+
+.iconHeart{
+	position: absolute;
+left: 0;
+font-weight: 400 !important;
+color: #fff;
+	
+}
+.iconHeart::before {
+		font-family: 'fontello';
+	content:'\e801';
+	font-style: normal;
+font-weight: 400;
+color: rgba(71,78,82,.4);
+font-size: 24px;
+text-decoration: inherit;
+vertical-align: baseline;
+text-align: center;
+font-variant: normal;
+text-transform: none;
+
+	}
+
+.iconHeartEmpty{
+position: absolute;
+left: 0;
+font-weight: 400 !important;
+color: #fff;	
+}
+.iconHeartEmpty::before {
+		font-family: 'fontello';
+	content:'\e800';
+	font-style: normal;
+font-weight: 400;
+
+font-size: 24px;
+}
+
+
+button.saveHome {
+	position: absolute;
+z-index: 1;
+right: 20px;
+top: 20px;
+font-size: 24px;
+outline: 0;
+transition: all .3s ease-in;
+cursor: pointer;
+color: #fff;
+font-weight: 700;
+border: 0;
+background: 0 0;
+}
