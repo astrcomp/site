@@ -1,11 +1,13 @@
 <?php
 Head(Main);
-if ($_POST['enter']){
-$Logon = 'Выход';
-}
-else {
-$Logon='Вход';
-}
+if (!$_SESSION['USER_ID']) $Logon='Вход';
+else $Logon = 'Выход';
+//if ($_POST['enter']){
+//$Logon = 'Выход';
+//}
+//else {
+//$Logon='Вход';
+//}
 ?>
 <script>
 
@@ -13,14 +15,13 @@ $Logon='Вход';
 icon.className="iconSpinner";
 setTimeout(function(){icon.className="iconSearch";}, 2000);
 
-
 };
-
 </script>
 <body style="width:100%;margin:0;">
 	<section style="flex: 1;	display: flex;	flex-direction: column;	height: 100vh;margin: 0;">
 	<?php
 	Menu($Logon);
+	MessageShow();
 	?>
 		
 <div id="search" style="padding-bottom: 0 !important; padding:5px;box-sizing: border-box;">
@@ -122,7 +123,32 @@ border-bottom-right-radius: 0;">
 		</div>	
 
 	</div>
-	<div id="map" style=" height: 70px; float:left;display:flex;flex: 1;	flex-direction: column;box-sizing: border-box;height: 100%;background-color: #e8e9ea;">Карта	</div>
+	<?php //////////// Карта!!!!
+	?>
+	<div id="map" style=" height: 70px; float:left;display:flex;flex: 1;	flex-direction: column;box-sizing: border-box;height: 100%;background-color: #e8e9ea;">
+	<div id="map_canvas" style="height: 100%; width:100%; border: 0;"></div>
+	<script type="text/javascript">
+
+	function initMap() {     
+	var myLatlng = new google.maps.LatLng(-34.397, 150.644);
+	var myOptions = {
+		zoom: 8,
+		center: myLatlng,
+		mapTypeId: google.maps.MapTypeId.ROADMAP
+	}
+	var map = new google.maps.Map(document.getElementById('map_canvas'), {
+    center: {lat: 46.34968, lng: 48.04076},
+    zoom: 15
+  }); 
+}
+ </script>
+
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMX8HowzpoQ5i-9iA1-d-IvFdxGyWMODc&callback=initMap">
+    </script>
+
+
+	</div>
 </div>
 </section>
 <footer id="bottom" class="cool" style="display: block; padding: 0 !important;"> Информация </footer>
@@ -152,7 +178,7 @@ exit;
 	<br>
 	<br>
 	<br>
-	<form action="account" method="POST" style="padding: 10px;">
+	<form action="login" method="POST" style="padding: 10px;">
 		<input type="text" name="login" placeholder="Логин" style="margin-right: 10px;margin-left: 10px;" required>
 		<input type="password" name="password" required placeholder="Пароль" style="margin-top: 10px;margin-right: 10px;margin-left: 10px;">
 		<br><br><input type="submit" name="enter" value="Вход" style="margin-right: 10px;margin-left: 10px; float: right;" required>

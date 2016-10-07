@@ -25,7 +25,7 @@ if (!$_SESSION['USER_ACTIVE_EMAIL'])
 			mysqli_query($CONNECT,"UPDATE 'users' SET 'active' = 1 WHERE 'email' = '$Email'");
 			$_SESSION['USER_ACTIVE_EMAIL']=$Email;
 					}
-			else MessageSend(1,"unknown email.");
+			else MessageSend(1,"unknown email.",'/');
 
 
 	}

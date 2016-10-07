@@ -18,6 +18,11 @@ else {
 
 
 
+function ULogin($p1) {
+if ($p1 <= 0 and $_SESSION['USER_LOGIN_IN'] != $p1) MessageSend(1, 'Данная страница доступна только для гостей.', '/');
+else if ($_SESSION['USER_LOGIN_IN'] != $p1) MessageSend(1, 'Данная сртаница доступна только для пользователей.', '/');
+}
+
 //echo '<meta charset="UTF-8"><br><br> page = '. $page;
 
 if (file_exists($page . '.php'))
@@ -40,14 +45,15 @@ else
     exit('Страница недоступна ошибка 404');
 //echo "<br>1234  Тест тест</br>";
 
-function MessageSend($p1,$p2)
+function MessageSend($p1,$p2, $p3 = '')
 {
-	if($p1==1) $p1='Ошибка';
-	else if ($p1==2) $p1='Ошибка';
-	else if ($p1==3) $p1='Ошибка';
+	if($p1==1) $p1='Ошибка! ';
+	else if ($p1==2) $p1='Подсказка. ';
+	else if ($p1==3) $p1='Информация. ';
 
-	$_SESSION['message']='<div class="MessageBlock"><b>'.$p1.$p2.'</div>';
-	exit (header('Location'.$_SERVER['HTTP_REFERER']));
+	$_SESSION['message']='<div class="MessageBlock"><b>'.$p1.'</b>: '.$p2.'</div>';
+	if ($p3) $_SERVER['HTTP_REFERER']  = $p3;
+	exit (header('Location:'.$_SERVER['HTTP_REFERER']));
 }
 
 function MessageShow(){
@@ -55,6 +61,7 @@ function MessageShow(){
 if ($_SESSION['message'])$Message=$_SESSION['message'];
 echo $Message;
 $_SESSION['message']=array();
+
 }
 
 
@@ -102,7 +109,9 @@ function Bottom(){
 function Head($fl1){
 	echo '<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><title>Сайт недвижимости!</title><link rel="stylesheet" type="text/css" href="style/style.css" media="all">
 	<link rel="stylesheet" type="text/css" href="/style/fontell.css" media="all">
-	<script type="text/javascript">function hideandseek(){ if(document.getElementById("fon").style.display == "none")  	{document.getElementById("fon").style.display = "";}  else document.getElementById("fon").style.display = "none";    if(document.getElementById("form").style.display == "none")  	{document.getElementById("form").style.display = "";}  else document.getElementById("form").style.display = "none";}	</script></head>' ;
+	<script type="text/javascript">function hideandseek(){ if(document.getElementById("fon").style.display == "none")  	{document.getElementById("fon").style.display = "";}  else document.getElementById("fon").style.display = "none";    if(document.getElementById("form").style.display == "none")  	{document.getElementById("form").style.display = "";}  else document.getElementById("form").style.display = "none";}	</script>
+	
+</head>' ;
 }
 
 

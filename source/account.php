@@ -1,5 +1,5 @@
 <?php 
-echo '<meta charset="utf8">';
+//echo '<meta charset="utf8">';
 if ($_POST['enter']){
 	$_POST['login'] = FormChars($_POST['login']);
 	$_POST['email'] = FormChars($_POST['email']);
@@ -9,10 +9,12 @@ if ($_POST['enter']){
 
 if ($_SESSION['captcha'] != md5($_POST['captcha'])) MessageSend(1, 'Капча введена неверно.');
 
-	if (!$_POST['login'] or !$_POST['email'] or !$_POST['password'] or !$_POST['name']) MessageSend(1,'Ошибка валидации формы.');
+	if (!$_POST['login'] or !$_POST['email'] or !$_POST['password'] or !$_POST['name']) MessageSend(1,'Ошибка валидации формы.','/');
 
 	$Row = mysqli_fetch_assoc(mysqli_query($CONNECT, "SELECT `login` FROM `users` WHERE `login` = '$_POST[login]'"));
-	if ($Row['login']) exit('Логин <b>'.$_POST['login'].'</b> уже используеться.');
+	
+	if ($Row['login']) MessageSend(1,'Логин <b>'.$_POST['login'].'</b> уже используеться.','/');
+	//exit ('Логин <b>'.$_POST['login'].'</b> уже используеться.');
 	$Row = mysqli_fetch_assoc(mysqli_query($CONNECT, "SELECT `email` FROM `users` WHERE `email` = '$_POST[email]'"));
 	if ($Row['email']) exit('E-Mail <b>'.$_POST['email'].'</b> уже используеться.');
 
@@ -20,7 +22,7 @@ if ($_SESSION['captcha'] != md5($_POST['captcha'])) MessageSend(1, 'Капча �
 	else echo 'STATUS FAILD';
 	$Code=substr(base64_encode($_POST['email']),0,-1);
 	mail($_POST[email],'Регистрация на сайте AllHome','Ссылка для активации: http://localhost/source/activate.php/code/'.substr($Code, -5).substr($Code,0,-5),'From: astrcomp@mail.ru\nContent-type: text/plain; charset=\"utf-8\"');
-	
+	exit (header('Location: http://localhost/index'));
 		//echo $Code;
 
 		//echo '<br>'.substr($Code, -5).substr($Code,0,-5);
